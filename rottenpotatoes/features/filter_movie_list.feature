@@ -25,7 +25,7 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step(s) to check the 'PG' and 'R' checkboxes
   When I check the following ratings: PG, R
   # enter step(s) to uncheck all other checkboxes
-  And I uncheck the following ratings: G, PG-13, NC-17
+  And I uncheck the following ratings: G, PG-13
   # enter step to "submit" the search form on the homepage
   When I press "Refresh"
   # enter step(s) to ensure that PG and R movies are visible
@@ -43,7 +43,7 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
 
 
 Scenario: all ratings selected
-  When I check the following ratings: PG,NC-17,G,PG-13,R
+  When I check the following ratings: PG, G, PG-13, R
   And I press "Refresh"
   Then I should see all the movies
   # see assignment

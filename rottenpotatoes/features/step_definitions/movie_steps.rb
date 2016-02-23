@@ -27,10 +27,10 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   #   "When I uncheck..." steps in lines 89-95 of web_steps.rb
   ratings  = rating_list.split(", ")
   ratings.each do |rating|
-    if uncheck == nil
-      check("ratings_#{rating}")
-    else
+    if uncheck
       uncheck("ratings_#{rating}")
+    else
+      check("ratings_#{rating}")
     end
   end
 end
